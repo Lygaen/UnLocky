@@ -20,8 +20,6 @@ def send(message):
     client.send(msg)
     if msg == 'quit':
         sys.exit()
-
-send('HELLO')
-send('World')
-send('!!!!!!!!!!!!!!!!!!!')
-send('quit')
+while True:
+    input_ = input()
+    send(input_)

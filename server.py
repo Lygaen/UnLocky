@@ -1,6 +1,7 @@
 # coding:utf-8
 import socket
 import threading
+import os
 
 PORT = 5050
 SERVER = socket.gethostbyname(socket.gethostname())
@@ -28,12 +29,15 @@ def handle_client(conn, addr):
 
 
 def start():
-    server.listen(5)
+    print(f'Waiting on port {PORT}')
+    server.listen(1)
     while True:
         conn, addr = server.accept()
+        os.system('cls')
+        print('Got new connection !')
         thread = threading.Thread(target=handle_client, args=(conn, addr))
         thread.start()
 
 
-print('Starting Server')
+print('Creating and setting up the Server...')
 start()
