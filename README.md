@@ -7,6 +7,9 @@ Vous pouvez passer votre chemin, ceci a été fait dans le cadre d'un devoir dem
 Le programme est divisé en 2 parties, le 'Serveur' et le 'Client'. Le 'Serveur' représente la porte, le 'Client' représente l'application qui permet de se connecter/ouvrir la porte
 Tout se passe en local - vous devez donc être sur la même wifi
 
+## Requis
+Python 3.2 au minimum est requis, sinon aucun module extérieur
+
 ## Les commandes
 Quand vous aurez ouvert la partie 'Client', vous serez confronté à un écran noir, ne vous inquiétez pas, c'est normal. Vous devrez ensuite taper dans l'interface de commande les commandes suivantes en fonction de ce que vous voulez faire :
 
