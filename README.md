@@ -9,9 +9,15 @@ Tout se passe en local - vous devez donc être sur la même wifi
 
 ## Requis
 Python 3.2 au minimum est requis, sinon aucun module extérieur
+Lancer le Serveur en premier, c'est **essentiel**
 
-## Les commandes
-Quand vous aurez ouvert la partie 'Client', vous serez confronté à un écran noir, ne vous inquiétez pas, c'est normal. Vous devrez ensuite taper dans l'interface de commande les commandes suivantes en fonction de ce que vous voulez faire :
+## Serveur
+Tout ce passe visuellement, pas besoin d'y toucher
+
+## Client
+Quand vous aurez ouvert la partie 'Client', vous serez confronté à un écran noir, ne vous inquiétez pas, c'est normal. Vous devrez ensuite taper dans l'interface de commande les [commandes](https://github.com/Lygaen/Unlocky#les-commandes) en fonction de ce que vous voulez.
+
+### Commandes
 
 #### `open` Permet de lancer la séquence d'ouverture
 
