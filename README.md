@@ -5,4 +5,13 @@ Vous pouvez passer votre chemin, ceci a été fait dans le cadre d'un devoir dem
 
 ## Si vous êtes mon Professeur de thecnologie/Avez quand même envie de voir :
 Le programme est divisé en 2 parties, le 'Serveur' et le 'Client'. Le 'Serveur' représente la porte, le 'Client' représente l'application qui permet de se connecter/ouvrir la porte
-On peut donc connecter plusieurs instances de 'Client'(Application) pour ouvrir une même porte ('Serveur')
+Tout se passe en local - vous devez donc être sur la même wifi
+
+## Les commandes
+Quand vous aurez ouvert la partie 'Client', vous serez confronté à un écran noir, ne vous inquiétez pas, c'est normal. Vous devrez ensuite taper dans l'interface de commande les commandes suivantes en fonction de ce que vous voulez faire :
+
+#### `open` Permet de lancer la séquence d'ouverture
+
+#### `close` Permet de lancer la séquence de fermeture
+
+#### `quit` Permet de quitter la connexion (Vous pouvez juste fermer la fenêtre, aussi)
