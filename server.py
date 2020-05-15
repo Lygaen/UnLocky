@@ -13,6 +13,18 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
 
 
+class Motor():
+
+    def __init__(self):
+        self.is_running = False
+    
+    def start(self):
+        self.is_running = True
+    
+    def stop(self):
+        self.is_running = True
+
+
 def handle_client(conn, addr):
     connected = True
     while connected:
@@ -25,6 +37,7 @@ def handle_client(conn, addr):
             else:
                 print(msg)
     conn.close()
+    os.system('cls')
     print('User quitted')
 
 
