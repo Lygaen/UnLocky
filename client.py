@@ -18,8 +18,13 @@ def send(message):
     send_length += b' ' * (HEADER - len(send_length))
     client.send(send_length)
     client.send(msg)
-    if msg == 'quit':
-        sys.exit()
-while True:
+
+connected = True
+while connected:
     input_ = input()
     send(input_)
+    if input_ == 'quit':
+        connected = False
+sys.exit()
+    
+    
