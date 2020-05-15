@@ -1,6 +1,7 @@
 import socket
 import os
 import sys
+import threading
 
 PORT = 5050
 SERVER = socket.gethostbyname(socket.gethostname())
@@ -19,13 +20,25 @@ try:
         client.send(send_length)
         client.send(msg)
 
-    connected = True
-    while connected:
-        input_ = input()
-        send(input_)
-        if input_ == 'quit':
-            connected = False
-    sys.exit()
+    def conn_one():
+        connected = True
+        while connected:
+            input_ = input()
+            send(input_)
+            if input_ == 'quit':
+                connected = False
+                sys.exit()
+
+    def conn_two():
+        connect_ = True
+        while connect_:
+            print(client.recv(2048).decode(FORMAT))
+
+    thread_one = threading.Thread(target=conn_one)
+    thread_two = threading.Thread(target=conn_two)
+    thread_one.start()
+    thread_two.start()
+
 except ConnectionRefusedError:
     os.system('cls')
     print("Il faut toujours allumer le serveur d'abord ! Sinon ça ne marche pas")

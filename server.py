@@ -40,13 +40,15 @@ def handle_client(conn, addr):
                     while loop_state:
                         if door_open.state:
                             print('Door already opened !')
+                            conn.send(
+                                "Door already opened !".encode(FORMAT))
                             break
                         if not open_motor.running:
                             open_motor.start()
                         if chock_capteur.got_chock(check):
                             loop_state = False
                         # Met de l'aléatoire pour si il y a un choc
-                        luck = random.randint(1, 25)
+                        luck = random.randint(1, 45)
                         if luck == 25:
                             chock_capteur.set_chock(True)
                         elif check == 15:  # Finis aux loop n°15
@@ -57,11 +59,15 @@ def handle_client(conn, addr):
                     open_motor.stop()
                     if chock_capteur.chock_state:
                         print("Door didn't open : A chock has been detected")
+                        conn.send(
+                            "Door didn't open : A chock has been detected ; Type 'open' to open it again".encode(FORMAT))
                     else:
                         if door_open.state:
                             pass
                         else:
                             print('Door succesfully opened !')
+                            conn.send(
+                                "Door succesfully opened !".encode(FORMAT))
                             door_open.state = True
                 elif msg == 'close':
                     os.system('cls')
@@ -71,6 +77,8 @@ def handle_client(conn, addr):
                     while loop_state:
                         if not door_open.state:
                             print('Door already closed !')
+                            conn.send(
+                                "Door already closed !".encode(FORMAT))
                             break
                         if not close_motor.running:
                             close_motor.start()
@@ -78,7 +86,7 @@ def handle_client(conn, addr):
                             open_motor.stop()
                             loop_state = False
                         # Met de l'aléatoire pour si il y a un choc
-                        luck = random.randint(1, 25)
+                        luck = random.randint(1, 45)
                         if luck == 25:
                             chock_capteur.set_chock(True)
                         elif check == 15:  # Finis aux loop n°15
@@ -90,11 +98,15 @@ def handle_client(conn, addr):
                     close_motor.stop()
                     if chock_capteur.chock_state:
                         print("Door didn't closed : A chock has been detected")
+                        conn.send(
+                            "Door didn't closed : A chock has been detected ; Type 'close' to open it again".encode(FORMAT))
                     else:
                         if not door_open.state:
                             pass
                         else:
                             print('Door succesfully closed !')
+                            conn.send(
+                                "Door succesfully closed !".encode(FORMAT))
                             door_open.state = False
         conn.close()
         os.system('cls')
@@ -105,8 +117,6 @@ def handle_client(conn, addr):
         os.system('cls')
         print('User quitted')
         start()
-
-# ConnectionResetError
 
 
 def start():
