@@ -24,3 +24,6 @@ Quand vous aurez ouvert la partie 'Client', vous serez confronté à un écran n
 #### `close` Permet de lancer la séquence de fermeture
 
 #### `quit` Permet de quitter la connexion (Vous pouvez juste fermer la fenêtre, aussi)
+
+## Et voilà !
+Je pense avoir tout dit ! En cas de problème merci de le dire avec les [issues](https://github.com/Lygaen/Unlocky/issues) de github mais je ne réponds pas tout le temps !
